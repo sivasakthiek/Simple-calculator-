@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="calc">
+   <input id="display" readonly placeholder="Enter">
+    
+    <div id="keys">
+      <button class="active" onclick="appendtodisplay('/')">÷</button>
+      <button class="active"onclick="appendtodisplay('*')">*</button>
+      <button class="active" onclick="appendtodisplay('-')">-</button>
+      <button class="active" onclick="appendtodisplay('+')">+</button><button class="active" onclick="appendtodisplay('%')">%</button><button onclick="Cleardisplay()" class="active" >AC</button><button onclick="appendtodisplay('7')">7</button><button onclick="appendtodisplay('8')">8</button><button onclick="appendtodisplay('9')">9</button><button onclick="appendtodisplay('4')">4</button><button onclick="appendtodisplay('5')">5</button><button onclick="appendtodisplay('6')">6</button><button onclick="appendtodisplay('1')">1</button>
+      <button onclick="appendtodisplay('2')">2</button><button onclick="appendtodisplay('3')">3</button>
+      <button class="active" onclick="appendtodisplay('.')">.</button><button onclick="appendtodisplay('0')">0</button><button class="active" onclick="Calculate('=')">=</button>
+    </div> 
+  </div>
+  <script>
+const display = document.getElementById("display");
+
+function appendtodisplay(value) {
+ if(value === '%') {
+   try {
+      display.value = eval(display.value) / 100;
+    } catch (error) {
+      display.value = "Error";
+   }
+ }
+  else{
+    display.value += value;
+  }
+}
+
+function Cleardisplay() {
+  display.value = "";
+}
+
+function Calculate() {
+  try {
+    display.value = eval(display.value);
+  } catch (error) {
+    display.value = "Error";
+  }
+  }
+    alert("created by siva 🌷");
+  </script>
+</body>
+
+</html>
